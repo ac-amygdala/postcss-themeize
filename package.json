@@ -1,0 +1,41 @@
+{
+  "name": "postcss-themeize",
+  "version": "0.1.0",
+  "description": "PostCSS plugin to process theme-dependent rules",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "theme"
+  ],
+  "author": "Andrey Cherepaha <ac.amygdala@gmail.com>",
+  "license": "MIT",
+  "repository": "ac-amygdala/postcss-themeize",
+  "bugs": {
+    "url": "https://github.com/ac-amygdala/postcss-themeize/issues"
+  },
+  "homepage": "https://github.com/ac-amygdala/postcss-themeize",
+  "dependencies": {
+    "postcss": "^5.2.8",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-cli": "^6.18.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-es2015-loose": "^8.0.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "del-cli": "^0.2.1",
+    "eslint": "^3.12.2",
+    "eslint-config-postcss": "^2.0.2",
+    "eslint-plugin-import": "^2.2.0",
+    "jest": "^18.0.0"
+  },
+  "scripts": {
+    "lint": "eslint *.js",
+    "test": "jest && eslint *.js",
+    "prepublish": "yarn run test && del-cli dist && eslint src/*.js && BABEL_ENV=publish babel src --out-dir dist"
+  }
+}
