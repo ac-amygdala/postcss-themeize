@@ -17,7 +17,7 @@ export default postcss.plugin('postcss-themeize', (options = {}) => {
             const themes = {};
 
             rule.walkDecls(decl => {
-                const matches = decl.value.match(/@([a-zA-Z0-9]+)\s*?/);
+                const matches = decl.value.match(/@([a-zA-Z0-9\-_]+)\s*?/);
                 const match = matches && matches[1];
 
                 if (match && themesConfig[match]) {
