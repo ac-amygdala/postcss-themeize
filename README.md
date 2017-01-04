@@ -6,15 +6,48 @@
 [ci-img]:  https://travis-ci.org/ac-amygdala/postcss-themeize.svg
 [ci]:      https://travis-ci.org/ac-amygdala/postcss-themeize
 
+It uses `@your_variable` syntax to determine which css declarations should be
+wrapped in theme.
+It copies selectors and prepend them with theme classname
+and appends all needed css properties with theme-dependent values.
+
 ```css
+/* Input css */
+
 .foo {
-    /* Input example */
+  color: @base_color;
+  /* some other styles */
+}
+```
+
+```js
+/* Config with themes passed to PostCSS */
+
+{
+  themes: {
+    green: {
+      base_color: #00ff00;
+    },
+    pink: {
+      base_color: rgb(255,20,147);
+    }
+  }
 }
 ```
 
 ```css
+/* Output css */
+
 .foo {
-  /* Output example */
+  /* some other styles */
+}
+
+.green .foo {
+  color: #00ff00;
+}
+
+.pink .foo {
+  color: rgb(255,20,147);
 }
 ```
 

@@ -8,6 +8,7 @@
     "postcss-plugin",
     "theme"
   ],
+  "main": "dist/index.js",
   "author": "Andrey Cherepaha <ac.amygdala@gmail.com>",
   "license": "MIT",
   "repository": "ac-amygdala/postcss-themeize",

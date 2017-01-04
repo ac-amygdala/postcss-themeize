@@ -2,7 +2,12 @@
 .editorconfig
 
 node_modules/
+src/
+test/
 npm-debug.log
 
 *.test.js
 .travis.yml
+.babelrc
+.eslintrc
+yarn.lock
