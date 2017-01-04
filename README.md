@@ -26,10 +26,10 @@ and appends all needed css properties with theme-dependent values.
 {
   themes: {
     green: {
-      base_color: #00ff00;
+      base_color: '#00ff00';
     },
     pink: {
-      base_color: rgb(255,20,147);
+      base_color: 'rgb(255,20,147)';
     }
   }
 }
