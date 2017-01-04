@@ -1,7 +1,7 @@
 import * as postcss from 'postcss';
 import * as _ from 'underscore';
 
-export default postcss.plugin('postcss-themeize', (options = {}) => {
+module.exports = postcss.plugin('postcss-themeize', (options = {}) => {
     const themesOptions = options.themes || {};
     const themesConfig = _.reduce(themesOptions, (memo, config, theme) => {
         _.each(config, (value, rule) => {
@@ -54,3 +54,5 @@ export default postcss.plugin('postcss-themeize', (options = {}) => {
 
     };
 });
+
+export default module.exports;
