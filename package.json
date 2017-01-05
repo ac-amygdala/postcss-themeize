@@ -1,6 +1,6 @@
 {
   "name": "postcss-themeize",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "PostCSS plugin to process theme-dependent rules",
   "keywords": [
     "postcss",
