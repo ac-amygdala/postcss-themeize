@@ -53,3 +53,20 @@ it('should collect rules with one theme selector', () => {
         }
     );
 });
+
+it('should process selectors list', () => {
+    return run(
+        'a,b{color:@color1;}',
+        `a,b{}
+.theme1 a,.theme1 b{
+    color: rgba(255,255,255,0.1)
+}`,
+        {
+            themes: {
+                theme1: {
+                    color1: 'rgba(255,255,255,0.1)'
+                }
+            }
+        }
+    );
+});
