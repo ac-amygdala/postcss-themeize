@@ -43,9 +43,10 @@ module.exports = postcss.plugin('postcss-themeize', (options = {}) => {
             }
 
             _.each(themes, (decls, theme) => {
-                const themeRule = rule.cloneAfter({
-                    selector: `.${theme} ${rule.selector}`
-                });
+                const selectorRegex = new RegExp(`^(\.${theme}\s)*`);
+                const selector = rule.selector
+                    .replace(selectorRegex, `.${theme} `);
+                const themeRule = rule.cloneAfter({ selector });
 
                 themeRule.removeAll().append(decls);
             });
